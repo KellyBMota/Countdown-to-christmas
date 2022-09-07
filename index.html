@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Christmas Countdown 2022</title>
+        <style>
+            html, body {height: 100hv; flex:auto;}
+            #countdown-text {width: 100%; text-align: center; font-size: 128;}
+        </style>
+    </head>
+    <body>
+        <h1 id="countdown-text">Loading...</h1>
+        <script>
+            (async () => {
+                const countdown = await fetch("/countdown").then( r => r.json());
+                console.log( countdown);
+                document.getElementById("countdown-text").innerText = `${countdown.days} Days, ${countdown.hours} Hours, ${countdown.mins} Minutes and ${countdown.secs} Seconds Until Christmas`
+            })();
+        </script>
+    </body>
+</html>
