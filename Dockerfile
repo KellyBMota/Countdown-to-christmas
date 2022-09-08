@@ -1,6 +1,6 @@
 FROM node:16
 
-WORKDIR /home/vsts/work/1/s/**/Dockerfile
+WORKDIR /usr/src/app
 
 COPY package*.json ./
 RUN npm ci --only=production
